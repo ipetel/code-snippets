@@ -18,4 +18,4 @@
   aws s3 sync <LOCAL-FOLDER-PATH> s3://<SOURCE-BUCKET-NAME> --debug
 
 # Get Stats on the S3 Bucket like Size and Number of Objects
-  aws s3 ls s3://<SOURCE-BUCKET-NAME> --summarize --human-readable
+  aws s3 ls s3://<SOURCE-BUCKET-NAME> --summarize --human-readable --recursive
