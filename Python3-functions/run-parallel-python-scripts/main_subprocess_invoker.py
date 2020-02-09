@@ -50,7 +50,7 @@ def main():
 
 	for i in range(num_of_processes):
 		# ['linux command','the script to run','pass param to script 1','pass param to script 2',,'pass param to script 3']
-		process = Popen(['python3','subprocess_script_batchOf10.py','{}'.format(process_input_list[i]['start']),'{}'.format(process_input_list[i]['end']),'{}'.format(i)],shell=False, stdout=PIPE,stderr=PIPE,universal_newlines=True)
+		process = Popen(['python3','subprocess_script.py','{}'.format(process_input_list[i]['start']),'{}'.format(process_input_list[i]['end']),'{}'.format(i)],shell=False, stdout=PIPE,stderr=PIPE,universal_newlines=True)
 		print('start process {}'.format(i))
 		process_list.append(process)
 
