@@ -15,7 +15,8 @@ def split_list_into_nSize_lists(data_list,N):
 		i=0
 		while i <= num_of_sub_lists:
 			offset=N*i
-			new_list.append(data_list[offset:offset+N])
+			if len(data_list[offset:offset+N])>0:
+				new_list.append(data_list[offset:offset+N])
 			i+=1
 			
 		return new_list
