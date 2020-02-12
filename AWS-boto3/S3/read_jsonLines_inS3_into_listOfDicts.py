@@ -22,7 +22,7 @@ def get_jsonLines_object_dataContent(object_key,bucket_resource):
 
   return json_data
 
-object_key= '<S3-FILE-PATH>/<FILE-NAME>'
+object_key= '<S3-FILE-PATH>/<FILE-NAME>' # without the bucket name
 s3_client = boto3.resource('s3')
 bucket_resource = s3_client.Bucket('<BUCKET-NAME>')
 get_jsonLines_object_dataContent(object_key,bucket_resource)
