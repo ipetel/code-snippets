@@ -19,3 +19,6 @@
 
 # Get Stats on the S3 Bucket like Size and Number of Objects
   aws s3 ls s3://<SOURCE-BUCKET-NAME> --summarize --human-readable --recursive
+  
+# using CLI with specific profile
+aws s3 ls --profile <PROFILE_NAME>
