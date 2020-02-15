@@ -1,5 +1,6 @@
 '''
   this script is for invoke Glue Job from Lambda function using Arguments by using boto3 SDK
+  for more info: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-pyspark-extensions-get-resolved-options.html
 '''
 
 ### in the Lambda function:
