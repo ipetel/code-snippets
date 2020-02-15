@@ -14,5 +14,8 @@ response = glue_client.start_job_run(
 
 ### in the Glue Job (PySpark)
 
+import sys
+from awsglue.utils import getResolvedOptions
+
 args = getResolvedOptions(sys.argv, ['JOB_NAME','<KEY_1>','<KEY_2>'])
 KEY_1_VAL=args['<KEY_1>']
