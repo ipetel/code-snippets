@@ -1,5 +1,4 @@
-import json
-import boto3
+import json, boto3, io
 
 '''
   this function handle reading json lines file from S3 bucket into list of dict
