@@ -1,0 +1,9 @@
+'''
+  This query is sum all the numbers in parsed @message field and filter rows that only include '##END'.
+  here is an example for one @message: "##END LAMBDA##, Records: 28"
+'''
+
+fields @sum_rec
+| parse @message "Records: *" as @rec
+| filter @message like '##END'
+| stats sum(@rec) by @sum_rec
