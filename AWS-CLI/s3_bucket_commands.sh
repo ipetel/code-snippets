@@ -16,6 +16,13 @@
   aws s3 sync <LOCAL-FOLDER-PATH> s3://<SOURCE-BUCKET-NAME>
   #you can use DEBUG flag to get feedback to the terminal
   aws s3 sync <LOCAL-FOLDER-PATH> s3://<SOURCE-BUCKET-NAME> --debug
+  
+  # copy a specific folder
+    # from local to s3
+    aws s3 cp <LOCAL-FOLDER-PATH> s3://<SOURCE-BUCKET-NAME> --recursive
+    
+    # from s3 to local
+    aws s3 cp s3://<SOURCE-BUCKET-NAME> <LOCAL-FOLDER-PATH> --recursive
 
 # Get Stats on the S3 Bucket like Size and Number of Objects
   aws s3 ls s3://<SOURCE-BUCKET-NAME> --summarize --human-readable --recursive
