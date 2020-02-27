@@ -1,0 +1,26 @@
+# source: https://www.connectdemo.com/references/attributeCheatSheet.html
+
+Below is a cheat sheet for the current Amazon Connect attriubutes. 
+The following are the high-level name spaces that can be used in check-contact attributes, 
+set contact attributes, passed as params for Lambda and Lex, played back in prompts, etc (Everything is case sensitive):
+
+  $.External.<attributeKey> (results of the most recent Lambda execution)
+  $.Attributes.<attributeKey> (all user-defined attributes that have been set with the Set contact attribute block).   
+  $.Lex.<attributeKey> (results of the most recent Lex execution).
+
+  Most commonly used Lex attributes:
+  $.Lex.IntentName
+  $.Lex.Slots.<slotName>
+  $.Lex.SessionAttributes.<sessionAttributeKey>
+  
+Additionally, the following can be referenced by default (built in)
+  $.ContactId
+  $.OriginalContactId
+  $.PreviousContactId
+  $.Channel
+  $.InstanceARN
+  $.InitiationMethod
+  $.SystemEndpoint.Address (DNIS)
+  $.CustomerEndpoint.Address (Customer Phone Number)
+  $.Queue.Name
+  $.TextToSpeechVoiceId
