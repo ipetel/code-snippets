@@ -1,4 +1,4 @@
-import boto3
+import boto3, io, csv
 
 s3_client = boto3.resource('s3')
 
