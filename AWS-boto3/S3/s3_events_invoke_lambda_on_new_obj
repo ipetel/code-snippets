@@ -1,0 +1,36 @@
+import json
+from urllib.parse import unquote
+
+### functions
+
+def get_val_from_dict_by_key_list(data_dict,key_list):
+	if isinstance(data_dict,dict):
+		dynamic_dict_path=data_dict
+		for key in key_list:
+			#print('[@@@ INFO] - ',key)
+			if isinstance(dynamic_dict_path,str):
+				dynamic_dict_path=json.loads(dynamic_dict_path)
+
+			if isinstance(dynamic_dict_path, dict) and key in dynamic_dict_path:
+				dynamic_dict_path=dynamic_dict_path[key]
+			elif isinstance(dynamic_dict_path, list) and len(dynamic_dict_path)>=int(key):
+				dynamic_dict_path = dynamic_dict_path[key]
+			else:
+				print('[### ERROR] - key "{}" is not exists in this level, the keys available are: {}'.format(key,list(dynamic_dict_path.keys())))
+				return None  
+
+		return dynamic_dict_path
+	else:
+		print('[### ERROR] - "data_dict" is not "dict" type!')
+		return None
+
+### main
+
+def lambda_handler(event, context):
+	bucket_name_input=get_val_from_dict_by_key_list(event,['Records',0,'s3','bucket','name'])
+	obj_key=unquote(get_val_from_dict_by_key_list(event,['Records',0,'s3','object','key']))
+
+  return {
+    'statusCode': 200,
+    'body': json.dumps(f'{bucket_name_input}/{obj_key}', default=str)
+  }
