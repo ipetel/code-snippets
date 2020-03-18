@@ -39,7 +39,7 @@ def lambda_handler(event, context):
 	bucket_name_input=get_val_from_dict_by_key_list(event,['Records',0,'s3','bucket','name'])
 	obj_key=unquote(get_val_from_dict_by_key_list(event,['Records',0,'s3','object','key']))
 
-  return {
-    'statusCode': 200,
-    'body': json.dumps(f'{bucket_name_input}/{obj_key}', default=str)
-  }
+	return {
+		'statusCode': 200,
+		'body': json.dumps(f'{bucket_name_input}/{obj_key}', default=str)
+	}
