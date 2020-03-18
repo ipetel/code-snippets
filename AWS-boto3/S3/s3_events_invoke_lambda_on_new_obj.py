@@ -1,3 +1,12 @@
+'''
+	this function is invoke by S3 Events on new object in the bucket, and get the buxket name and the object key
+	
+	there is a use of 'unquote' function due to auto encoding by AWS (I assume), for example:
+	in the S3 bucket the name of the file is: 6ecea53-2531-4375-af4d-f98027a88825_2020-03-18T10:06:41.635+0000_AUDIO_FROM_CUSTOMER.wav
+	but in the Lambda's 'event' parameter the name received: e6ecea53-2531-4375-af4d-f98027a88825_2020-03-18T10%3A06%3A41.635%2B0000_AUDIO_FROM_CUSTOMER.wav
+	and when trying to read this file, you will get an Error that this object is not existed in the bucket.
+'''
+
 import json
 from urllib.parse import unquote
 
