@@ -6,8 +6,8 @@ def get_dynamodb_primary_key_list(table_name,partition_key,region):
 		table = dynamodb_resource.Table(table_name)
 		
 		response = table.scan(
-			AttributesToGet=[partition_key],
-			Select='SPECIFIC_ATTRIBUTES'
+			Select='SPECIFIC_ATTRIBUTES',
+			ProjectionExpression=partition_key
 		)
 		
 		if 'Count' in response and response['Count']>0:
