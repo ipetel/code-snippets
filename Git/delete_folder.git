@@ -1,0 +1,8 @@
+# first you need to clone the folder localy, then remove it from the cached list, commit and push
+
+1) open terminal
+2) git clone https://github.com/<USER NMAE>/<REPOSITORY>.git
+3) cd to the <REPOSITORY> folder
+4) git rm -r --cached <FOLDER NAME>
+5) git commit -m "Removed <FOLDER NAME> folder from repository"
+6) git push origin master
