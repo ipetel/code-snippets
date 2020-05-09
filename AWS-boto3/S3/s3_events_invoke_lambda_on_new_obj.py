@@ -1,5 +1,5 @@
 '''
-	this function is invoke by S3 Events on new object in the bucket, and get the buxket name and the object key
+	this function is invoke by S3 Events on new object in the bucket, and get the bucket name and the object key
 	
 	there is a use of 'unquote' function due to auto encoding by AWS (I assume), for example:
 	in the S3 bucket the name of the file is: 6ecea53-2531-4375-af4d-f98027a88825_2020-03-18T10:06:41.635+0000_AUDIO_FROM_CUSTOMER.wav
