@@ -12,5 +12,6 @@
   --routines \
   --triggers \
   --databases <DB-NAME-TO-DUMP> > <DUMP-FILE-NAME>.sql
+# 3. write or paste the user password and press "enter"   
 
 # Note: the time for creating the dump is depending on the DB size, I have used a small DB (40GB) that took around 30min.   
