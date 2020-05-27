@@ -1,0 +1,11 @@
+'''
+  This query is parse the @message from DMS service logs, 
+  then group by all the parsed fields and get the count including filter and sort the result.
+  here is an example for one @message: 
+  "2020-05-27T10:12:18 [SOURCE_CAPTURE ]I: set_columns_orig_type for production_new.cataloginventory_stock_status (mysql_endpoint_metadata.c:574)"
+'''
+
+parse @message "[*]*: *" as @config,@level, @exception
+| stats count(*) by @config,@level, @exception as @my_count
+| filter @level like 'E'
+| sort @my_count desc
