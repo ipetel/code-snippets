@@ -1,0 +1,11 @@
+'''
+  This query is for display errors from only one log under log group.
+  my use case was to analyze logs from DMS task and I wanted to look at each log separately.
+  using filter on "@logStream" gives this option with filter on "@message" to display only errors ('E:')
+
+'''
+
+fields @log,@logStream,@timestamp, @message
+| sort @timestamp asc
+| filter @logStream like 'dms-task-ABC123' and @message like 'E:'
+| limit 100
