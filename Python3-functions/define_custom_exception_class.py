@@ -10,10 +10,10 @@ class CustomError(Exception):
         
 
 # use it whenever you need in your code as follows:
-    try:
-      ...
-      <some code>
-      ...
-  	except Exception as e:
-		  print(f'### [ERROR] - {e}')
-		  raise CustomError('some error message')
+try:
+   ...
+   <some code>
+   ...
+except Exception as e:
+   print(f'### [ERROR] - {e}')
+   raise CustomError('some error message')
