@@ -13,6 +13,6 @@
 #	–time : show time of last modification of any file or directory.
 #	–exclude=PATTERN : exclude files that match PATTERN
 
-#example of great command: 
+#example of great commands:
 du -h -d 1
-
+du -h | sort -rh | head -10
