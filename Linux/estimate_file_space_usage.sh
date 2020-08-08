@@ -14,5 +14,5 @@
 #	–exclude=PATTERN : exclude files that match PATTERN
 
 #example of great commands:
-du -h -d 1
+du -h -d 1 | sort -rh
 du -h | sort -rh | head -10
