@@ -10,7 +10,11 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-def print_color(msg):
-    print(bcolors.WARNING + msg + bcolors.ENDC)
+def print_color_warning(msg,obj=''):
+    print(bcolors.WARNING + str(msg) + str(obj) + bcolors.ENDC)
 
-print_color('hello')
+def print_color_ok(msg, obj=''):
+    print(bcolors.OKGREEN + str(msg) + str(obj) + bcolors.ENDC)
+
+
+print_color_warning('hello',[1,2,3])
