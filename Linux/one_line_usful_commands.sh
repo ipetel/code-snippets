@@ -12,3 +12,5 @@ top -c -p $(pgrep -d',' -f <COMMAND_NAME>)
 
 # look for file name that start with "abc" from the current path
 find . -name abc*
+
+find <PATH / . > -type d -name "*<FOLDER-YOU-ARE-LOOKING>*" -print
