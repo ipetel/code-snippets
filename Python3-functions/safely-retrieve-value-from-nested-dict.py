@@ -19,7 +19,11 @@ def get_val_from_dict_by_key_list(data_dict,key_list):
 			elif isinstance(dynamic_dict_path, list) and len(dynamic_dict_path)>=int(key):
 				dynamic_dict_path = dynamic_dict_path[key]
 			else:
-				print('[### ERROR] - key "{}" is not exists in this level, the keys available are: {}'.format(key,list(dynamic_dict_path.keys())))
+				try:
+					print(f'[### ERROR] - key {key} is not exists in this level, the keys available are: {list(dynamic_dict_path.keys())}')
+				except Exception as e:
+					print(f'### ERROR ### - {e}')
+				
 				return None  
 
 		return dynamic_dict_path
