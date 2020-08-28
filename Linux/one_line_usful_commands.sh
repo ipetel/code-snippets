@@ -14,3 +14,7 @@ top -c -p $(pgrep -d',' -f <COMMAND_NAME>)
 find . -name abc*
 
 find <PATH / . > -type d -name "*<FOLDER-YOU-ARE-LOOKING>*" -print
+
+# Ububtu - search for only installed packages using apt
+example: sudo apt list -a --installed <PART-OF-PACKAGE-NAME>*
+example: sudo apt list -a --installed libstdc++*
