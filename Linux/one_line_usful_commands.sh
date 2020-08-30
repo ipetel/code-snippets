@@ -25,3 +25,11 @@
   #create update an existed link
   ls -l /usr/bin/python3
   sudo ln -sf /usr/bin/python3.5 /usr/bin/python3
+
+#### look for a string in many files
+  grep -r '<STRING>' <PATH>
+  example: grep -r 'python3' ~/*
+
+#### replace new string with new one
+  find <PATH-TO-SEARCH> -type f -exec sed -i 's/BAZEL_VERSION="3.1.0"/BAZEL_VERSION="3.4.1"/g' {} +
+  find ~/* -type f -exec sed -i 's/<OLD-STRING>/<NEW-STRING>/g' {} +
