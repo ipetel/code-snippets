@@ -15,14 +15,15 @@
 #_________________________ Ububtu __________________________________________________
 
 #### search for only installed packages using apt
-  example: sudo apt list -a --installed <PART-OF-PACKAGE-NAME>*
+  sudo apt list -a --installed <PART-OF-PACKAGE-NAME>*
   example: sudo apt list -a --installed libstdc++*
 
 #### symbolic link (symlink)
-  #create new link
+  # create new link
+  sudo ln -s <LINK-TARGET-FILE> <LINK-FILE>
   sudo ln -s /usr/bin/python3.5 /usr/bin/python3
 
-  #create update an existed link
+  # update an existed link (you can also delete the only one and just create a new instead)
   ls -l /usr/bin/python3
   sudo ln -sf /usr/bin/python3.5 /usr/bin/python3
 
