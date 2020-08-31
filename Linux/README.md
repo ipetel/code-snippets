@@ -1,4 +1,4 @@
-# This folder conations usful Bash commands
+# This folder conations useful Bash commands
 you can find in this folder few useful code snippets in Bash
 
 ## Install Python From Source 
@@ -32,3 +32,7 @@ the fix:
 1) a package configuration will be open - click on "all locales"
 1) click on "en_US.UTF-8"
 1) check the new configuration with "locale" command
+
+
+### On Ubuntu 16.04 
+export LC_ALL=C
