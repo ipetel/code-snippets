@@ -5,17 +5,20 @@
 '''
 import json, os, boto3
 
-def update_existed_record_dynamodb(contactId,transcription,transcription_s3_path):
+dynamodb_resource = boto3.resource('dynamodb',region_name=os.environ['REGION'])
+dynamodb_table_name = os.environ['DYNAMODB_TABLE']
+
+def update_existed_record_dynamodb(dynamodb_table_name,key_val):
 	try:	
-		dynamodb = boto3.resource('dynamodb',region_name=os.environ['REGION'])
-		table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
+		table = dynamodb.Table()
 		
-		return table.get_item(
-			Key={'key_name':'key_val'},
-			UpdateExpression='SET field1 = :val1, field2= :val2',
+		response = table.get_item(
+			Key={'key_name':key_val},
 			ProjectionExpression='<NAME-OF-COLUMN-RETURN>'
 		)
+		
+		return response.get('Item',None)
 	except Exception as e:
 		msg=f'### ERROR - {e}'
 		print(msg)
-		return msg
+		raise e
