@@ -1,0 +1,29 @@
+{
+  "StartAt": "LambdaDispatcher",
+  "States": {
+    "LambdaDispatcher": {
+      "Type": "Task",
+      "Resource": "<LAMBDA-ARN-1>",
+      "ResultPath": "$.<PARAMETER-NAME-1>",
+      "Next": "MapEndpoints",
+      "TimeoutSeconds": 60
+    },
+    "MapEndpoints": {
+      "Type": "Map",
+      "ItemsPath": "$.<PARAMETER-NAME-1>.<LAMBDA-ARN-1-OUTPUT-FIELD-NAME>",
+      "ResultPath": "$.<PARAMETER-NAME-1>",
+      "Iterator": {
+        "StartAt": "LambdaRun",
+        "States": {
+          "LambdaRun": {
+            "Type": "Task",
+            "Resource": "<LAMBDA-ARN-2>",
+            "TimeoutSeconds": 1800,
+            "End": true
+          }
+        }
+      },
+      "End": true
+    }
+  }
+}
