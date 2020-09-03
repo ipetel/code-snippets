@@ -11,9 +11,11 @@ ________________________________________________________________________________
 
 ### Error Handling
 
+```python
 try:
-  .....
+     .....
 except Exception as e:
-  msg=f'### ERROR - {e}'
-  print(msg)
-  raise e
+     msg=f'### ERROR - {e}'
+     print(msg)
+     raise e
+```
