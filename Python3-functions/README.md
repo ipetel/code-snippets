@@ -21,8 +21,8 @@ ________________________________________________________________________________
 
 ### Install PIP
 
-1) wget -nv https://bootstrap.pypa.io/get-pip.py
-2) python3 get-pip.py
+1) ```wget -nv https://bootstrap.pypa.io/get-pip.py``` or ```curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py```
+2) for Python3.x: ```python3 get-pip.py``` or for Python2.x: ```python get-pip.py```
 ___________________________________________________________________________________
 
 ### Error Handling
