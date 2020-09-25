@@ -34,3 +34,6 @@
 #### replace new string with new one
   find <PATH-TO-SEARCH> -type f -exec sed -i 's/BAZEL_VERSION="3.1.0"/BAZEL_VERSION="3.4.1"/g' {} +
   find ~/* -type f -exec sed -i 's/<OLD-STRING>/<NEW-STRING>/g' {} +
+  
+#### split file to many small files of 1GB size + delete the original file
+  split -d -b 1G -a 4 <ORIGINAL-FILE-PATH> <ORIGINAL-FILE-PATH>. && rm <ORIGINAL-FILE-PATH>
