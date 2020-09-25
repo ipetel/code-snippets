@@ -16,3 +16,7 @@
 #example of great commands:
 du -h -d 1 | sort -rh | head -5
 du -h | sort -rh | head -10
+
+# USING "ls" command
+ls -Slh #desc
+ls -Slhr #asc
