@@ -3,6 +3,7 @@
 
 dir_path=/home/ubuntu/tmp/*;
 max_size=104857600; #100MB in Bytes
+#max_size=524288000; #500MB in Bytes
 for file in $dir_path; do 
     file_size=$(wc -c <"$file")
     if [ $file_size -gt $max_size ]; then
