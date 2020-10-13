@@ -7,6 +7,10 @@
   NOTICE: the service that creates this Presigned URL needs to have a permission to the action that given in the URL.
           for example, let's say that you are using AWS Lambda function to create this URL and you want to give 'get_object'
           permission, so this Lambda needs to have this permission before creating the URL
+  
+  
+  Why is my presigned URL for an Amazon S3 bucket expiring before the expiration time that I specified?
+  	https://aws.amazon.com/premiumsupport/knowledge-center/presigned-url-s3-bucket-expiration/
 '''
 
 import boto3
