@@ -1,10 +1,13 @@
 import boto3
 
-try:
-  s3_client = boto3.resource('s3')
-  bucket_resource = s3_client.Bucket('<BUCKET-NAME>')
+def get_all_obj_in_bucket(bucket_name):
+  try:
+    s3_resource = boto3.resource('s3')
+    bucket_resource = s3_client.Bucket(bucket_name)
 
-  file_list= [f.key for f in bucket_resource.objects.all()]
-except ValueError:
-  print(f'[### ERROR] - while trying to read file list of "{bucket_name}" - error message: {ValueError}')
-  return None
+    return [f.key for f in bucket_resource.objects.all()]
+  except Exception as e:
+    print(f'[### ERROR] - while trying to read file list of "{bucket_name}" - error message: {e}')
+    raise e
+    
+def get_all_obj_in_bucket('example-bucket'):
