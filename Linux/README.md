@@ -5,6 +5,9 @@ you can find in this folder few useful code snippets in Bash
 
 https://docs.rstudio.com/resources/install-python-source/
 
+## find out the machine public IP
+curl -4 icanhazip.com
+
 ## Fix Ubuntu locale error
 
 the error:
