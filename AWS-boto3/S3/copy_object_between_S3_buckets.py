@@ -26,7 +26,7 @@ logger = logging.getLogger()
 # ___ boto3 config
 # uncomment if this code will run on your local with existing AWS config is set up by AWS cli
 '''
-session = boto3.Session(profile_name='idan-sandbox')
+session = boto3.Session(profile_name='<PROFILE-NAME>')
 s3_resourceClient = session.resource('s3')
 '''
 # uncomment if this code will run on Lambda with IAM role
