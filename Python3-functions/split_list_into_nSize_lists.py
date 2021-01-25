@@ -5,12 +5,13 @@
     for example let's say you have the next list: [1,2,3,4,5,6,7,8,9,10]
     when you will send this list to the function with N=4 the result will be: [[1,2,3,4],[5,6,7,8],[9,10]]
 	'''
-
+from math import ceil
+	
 def split_list_into_nSize_lists(data_list,N):
 	if isinstance(data_list,list):
 		new_list=[]
 		count_list_elem=len(data_list)
-		num_of_sub_lists=round(count_list_elem/N)
+		num_of_sub_lists=ceil(count_list_elem/N)
 		
 		i=0
 		while i <= num_of_sub_lists:
