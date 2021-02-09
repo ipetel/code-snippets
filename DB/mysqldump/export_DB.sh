@@ -7,6 +7,7 @@
   sudo mysqldump -h <DB-ENDPOINT> \
   -u <DB-USER> \
   -p<DB-PASSWORD> \
+  --verbose
   --port=3306 \
   --single-transaction=true \
   --routines \
@@ -23,6 +24,7 @@
   sudo mysqldump -h <DB-ENDPOINT> \
   -u <DB-USER> \
   -p<DB-PASSWORD> \
+  --verbose
   --port=3306 \
   --single-transaction=true \
   --routines \
