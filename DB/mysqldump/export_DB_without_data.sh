@@ -7,8 +7,8 @@
   sudo mysqldump -h <DB-ENDPOINT> \
   -u <DB-USER> \
   -p \
+  --verbose \
   --no-data \
-  --column-statistics=0 \
   --port=3306 \
   --single-transaction=true \
   --routines \
