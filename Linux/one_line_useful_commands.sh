@@ -11,6 +11,9 @@
 # look for substring of a file name or folder
   find <PATH / . > -name "*<FOLDER-YOU-ARE-LOOKING>*" -print # file
   find <PATH / . > -type d -name "*<FOLDER-YOU-ARE-LOOKING>*" -print # folder
+  
+# ignore command output
+cmd > /dev/null 2>&1
 
 #_________________________ Ububtu __________________________________________________
 
