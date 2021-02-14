@@ -7,11 +7,11 @@ HOST="localhost"
 PASSWORD="<DB-PASSWORD>"
 USER="<DB-USER>"
 
-COMPS=('db_1' 'db2' 'db3')
-for comp in $COMPS
+DBS=('db_1' 'db2' 'db3')
+for db in ${DBS[*]};
 do
-mysql --host=$HOST --password=$PASSWORD --user=$USER -e"CREATE SCHEMA $comp CHARACTER SET utf8 COLLATE utf8_general_ci;";
-mysql --host=$HOST --password=$PASSWORD --user=$USER --database="$comp"<./script.sql >./reports/restore_$comp.log;
+mysql --host=$HOST --password=$PASSWORD --user=$USER -e"CREATE SCHEMA $db CHARACTER SET utf8 COLLATE utf8_general_ci;";
+mysql --host=$HOST --password=$PASSWORD --user=$USER --database="$db" <./script.sql >./reports/restore_$comp.log;
 done
 
 ''' example of "script.sql"
