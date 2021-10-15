@@ -1,4 +1,4 @@
-# Update a field in embedded document (array) by conditional statement
+# Update a field of embedded document (array) by conditional statement
  Assumptions:
  - Collection name: col_1
  - document example
