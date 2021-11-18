@@ -13,9 +13,9 @@
   #read the next post: https://medium.com/tensult/copy-s3-bucket-objects-across-aws-accounts-e46c15c4b9e1
 
   #copy from local to S3 bucket
-  aws s3 sync <LOCAL-FOLDER-PATH> s3://<SOURCE-BUCKET-NAME>
+  aws s3 cp <LOCAL-FOLDER-PATH> s3://<SOURCE-BUCKET-NAME>
   #you can use DEBUG flag to get feedback to the terminal
-  aws s3 sync <LOCAL-FOLDER-PATH> s3://<SOURCE-BUCKET-NAME> --debug
+  aws s3 cp <LOCAL-FOLDER-PATH> s3://<SOURCE-BUCKET-NAME> --debug
   
   # copy a specific folder
     # from local to s3
