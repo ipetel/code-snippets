@@ -67,3 +67,21 @@ data = load_json_file_into_python_object(file_path)
 
 # print the data
 pprint(data)
+
+
+# ___ read from txt file line by line
+# example file:
+#   abcd
+#   asdf
+#   vfffr
+
+@try_except_decorator
+def read_file_line_by_line(file_path):
+	with open(file_path) as f:
+	    return [line.rstrip() for line in f]
+	
+file_path = 'file_3.txt'
+data = read_file_line_by_line(file_path)
+
+# print the data
+pprint(data)
