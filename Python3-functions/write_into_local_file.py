@@ -62,3 +62,10 @@ def write_object_into_json(file_path,data):
 file_path = 'file_1.json'
 data = [{'name':'a1\n'},{'name':'b2\n'},{'name':'c3\n'}]
 write_object_into_json(file_path,data)
+
+
+# ___ Write List of stings into file line by line
+def write_object_into_list_file(file_path,data_list):
+    with open(file_path, 'w') as f:
+        for item in data_list:
+            f.write(f'{item}\n')
