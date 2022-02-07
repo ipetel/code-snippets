@@ -69,3 +69,19 @@ def write_object_into_list_file(file_path,data_list):
     with open(file_path, 'w') as f:
         for item in data_list:
             f.write(f'{item}\n')
+            
+            
+# ___ list of dictionaries to a csv file
+import csv
+
+to_csv = [
+    {'name': 'bob', 'age': 25, 'weight': 200},
+    {'name': 'jim', 'age': 31, 'weight': 180},
+]
+
+keys = to_csv[0].keys()
+
+with open('people.csv', 'w', newline='') as output_file:
+    dict_writer = csv.DictWriter(output_file, keys)
+    dict_writer.writeheader()
+    dict_writer.writerows(to_csv)
