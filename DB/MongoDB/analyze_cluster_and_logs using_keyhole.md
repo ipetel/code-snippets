@@ -15,3 +15,10 @@ a tool to explore MongoDB deployments
 ## using
   - ```docker run --rm -v /homes/idanp/out:/home/simagix/out simagix/keyhole /keyhole --allinfo "mongodb://user:secret@host.local/test?replicaSet=rs"```
   - ```docker run --rm -v /homes/idanp/out:/home/simagix/out simagix/keyhole /keyhole --info "mongodb://user:secret@host.local/test?replicaSet=rs"```
+
+## Maobi
+HTML reports generating tool created for Keyhole
+
+### install and start the docker image
+- ``docker run -d -p 3030:3030 simagix/maobi```
+-  go to ```http://localhost:3030/``` in the browser
