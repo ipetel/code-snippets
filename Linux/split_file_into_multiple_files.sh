@@ -18,6 +18,7 @@ done
 
 
 # the following code will take CSV file and split it to new files with fix and given number of lines, in addtion it will have the header on each file
+# https://www.baeldung.com/linux/split-file-with-header
 
 tail -n +2 <SOURCE_FILE_PATH> | split -d -l <NUM_OF_LINES_FOR_EACH_FILE> - --filter='sh -c "{ head -n1 <SOURCE_FILE_PATH>; cat; } > $FILE"' <OUTPUT_FILES_STRUCTURE>
 
