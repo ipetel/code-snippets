@@ -14,3 +14,13 @@ for file in $dir_path; do
         echo "$file size is under 100MB";
     fi
 done
+
+
+
+# the following code will take CSV file and split it to new files with fix and given number of lines, in addtion it will have the header on each file
+
+tail -n +2 <SOURCE_FILE_PATH> | split -d -l <NUM_OF_LINES_FOR_EACH_FILE> - --filter='sh -c "{ head -n1 <SOURCE_FILE_PATH>; cat; } > $FILE"' <OUTPUT_FILES_STRUCTURE>
+
+# <NUM_OF_LINES_FOR_EACH_FILE> => for example: 5
+# <OUTPUT_FILES_STRUCTURE> => for example: some_path/input_data_
+# <SOURCE_FILE_PATH> => for example: some_path/input_file.csv
