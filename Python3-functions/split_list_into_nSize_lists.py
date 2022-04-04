@@ -24,3 +24,33 @@ def split_list_into_nSize_lists(data_list,N):
 	else:
 		print('ERROR - Data provide is not a list type')
 		return None
+'''
+   this function return a list of tuples (start and end number) by using N value that indicates the size of the tuple's number range
+    if the last group is not big enough, the last list will be in the size that was left.
+    for example: 
+    	split_int_into_nSize_lists(number=7,3)
+	return: [(0,2),(3,5),(6,7)]
+'''
+
+def split_int_into_nSize_lists(number,N):
+    if isinstance(number,int):
+        new_list=[]
+        num_of_sub_lists=ceil(number/N)
+        print(num_of_sub_lists)
+        
+        i=0
+        prev = 0
+        while i <= num_of_sub_lists-1:
+            offset=N*i
+            
+            if number > N*i+N:
+                new_list.append((N*i,N*i+N-1))
+            else:
+                new_list.append((N*i,number))
+            
+            i+=1
+            
+        return new_list
+    else:
+        print('ERROR - Data provide is not a list type')
+        return None
